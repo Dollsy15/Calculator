@@ -9,6 +9,7 @@
 
 body{
     margin: 25px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .calculator{
@@ -20,32 +21,3 @@ body{
     color: white;
 }
 
-input{
-    width: 320px;
-    border: none;
-    padding: 24px;
-    margin: 10px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
-    font-size: 40px;
-    text-align: right;
-    cursor: pointer;
-}
-
-input::placeholder{
-    color: #ffffff;
-}
-
-.one{
-    border-radius: 50%;
-}
-
-button{
-    border: none;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    border-radius: 50%;
-    background: transparent;
-    color: #ffffff;
-}
