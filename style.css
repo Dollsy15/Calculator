@@ -8,24 +8,16 @@
 }
 
 body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+    margin: 25px;
 }
 
 .calculator{
-    border: 1px solid #717377;
+    background: black;
+    width: 563px;
+    height: 1218px;
+    border-radius: 50px;
     padding: 20px;
-    border-radius: 16px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rbga(113, 115, 119, 0.5);
-}
-
-.colspan-2 {
-    width: calc(2 * 50px + 10px);
+    color: white;
 }
 
 input{
@@ -42,6 +34,10 @@ input{
 
 input::placeholder{
     color: #ffffff;
+}
+
+.one{
+    border-radius: 50%;
 }
 
 button{
