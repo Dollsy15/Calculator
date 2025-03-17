@@ -9,7 +9,6 @@
 
 body{
     margin: 25px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .calculator{
@@ -29,3 +28,24 @@ body{
     height: 150px;
     text-align: right;
 }
+
+.button-container{
+
+}
+
+.button{
+    height: 110px;
+    width: 110px;
+    font-size: 45px;
+    border-radius: 50%;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-function{
+    color: black;
+    background: #a5a5a5;
+}
+
