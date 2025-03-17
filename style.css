@@ -21,3 +21,11 @@ body{
     color: white;
 }
 
+.display{
+    font-size: 130px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    height: 150px;
+    text-align: right;
+}
