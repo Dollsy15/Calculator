@@ -68,6 +68,7 @@ body {
     grid-column: span 2; 
     width: 100%; 
     border-radius: 30px;
+    padding-right: 70px;
 }
 
 .button:active,
