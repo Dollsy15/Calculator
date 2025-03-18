@@ -21,7 +21,7 @@ body {
     padding: 20px;
     color: white;
     border-radius: 30px;
-    position: relative;
+    position: static;
 }
 
 .display {
