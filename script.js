@@ -28,18 +28,17 @@ const numberElArray = [
 
 let valueStrInMemory = null;
 let operatorInMemory = null;
+let waitingForNewNumber = false;
 
 const getValueAsStr = () => valueEl.textContent.replace(/,/g, '');
 const getValueAsNum = () => parseFloat(getValueAsStr()) || 0;
 
 const setStrAsValue = (valueStr) => {
-  if (valueStr === '') valueStr = '0'; 
-
+  if (valueStr === '') valueStr = '0';
   if (valueStr[valueStr.length - 1] === '.') {
     valueEl.textContent = valueStr;
     return;
   }
-
   const [wholeNumStr, decimalStr] = valueStr.split('.');
   if (decimalStr) {
     valueEl.textContent = parseFloat(wholeNumStr).toLocaleString() + '.' + decimalStr;
@@ -50,16 +49,16 @@ const setStrAsValue = (valueStr) => {
 
 const handleNumberClick = (numStr) => {
   const currentValueStr = getValueAsStr();
-  if (currentValueStr === '0') {
+  if (waitingForNewNumber) {  
     setStrAsValue(numStr);
+    waitingForNewNumber = false;
   } else {
-    setStrAsValue(currentValueStr + numStr);
+    setStrAsValue(currentValueStr === '0' ? numStr : currentValueStr + numStr);
   }
 };
 
 const getResultOfOperationAsStr = () => {
-  if (!valueStrInMemory || !operatorInMemory) return getValueAsStr(); // Fix calculation issue
-
+  if (!valueStrInMemory || !operatorInMemory) return getValueAsStr();
   const currentValueNum = getValueAsNum();
   const valueNumInMemory = parseFloat(valueStrInMemory);
   let newValueNum = 0;
@@ -86,18 +85,19 @@ const handleOperatorClick = (operation) => {
   if (!valueStrInMemory) {
     valueStrInMemory = getValueAsStr();
     operatorInMemory = operation;
-    waitingForNewNumber = true;
   } else {
     valueStrInMemory = getResultOfOperationAsStr();
     operatorInMemory = operation;
-    waitingForNewNumber = true;
+    setStrAsValue(valueStrInMemory);
   }
+  waitingForNewNumber = true;
 };
 
 acEl.addEventListener('click', () => {
   setStrAsValue('0');
   valueStrInMemory = null;
   operatorInMemory = null;
+  waitingForNewNumber = false;
 });
 
 pmEl.addEventListener('click', () => {
@@ -122,6 +122,7 @@ equalEl.addEventListener('click', () => {
     setStrAsValue(getResultOfOperationAsStr());
     valueStrInMemory = null;
     operatorInMemory = null;
+    waitingForNewNumber = false;
   }
 });
 
