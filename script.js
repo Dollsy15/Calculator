@@ -131,7 +131,7 @@ numberElArray.forEach((numberEl, index) => {
 });
 
 decimalEl.addEventListener('click', () => {
-  const const valueEl = document.querySelector('.display'); 
+  const valueEl = document.querySelector('.display'); 
   const historyEl = document.querySelector('.history'); 
   const acEl = document.querySelector('.ac');
   const pmEl = document.querySelector('.pm');
@@ -282,7 +282,7 @@ decimalEl.addEventListener('click', () => {
       updateHistory(historyStr + '.');
     }
   });
-  
+
   currentValueStr = getValueAsStr();
   if (!currentValueStr.includes('.')) {
     setStrAsValue(currentValueStr + '.');
