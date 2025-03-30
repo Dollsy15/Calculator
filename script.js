@@ -49,3 +49,12 @@ const setStrAsValue = (valueStr) => {
       valueEl.textContent = parseFloat(wholeNumStr).toLocaleString();
     }
 };
+
+const handleNumberClick = (numStr) => {
+    const currentValueStr = getValueAsStr();
+    if (currentValueStr === '0') {
+      setStrAsValue(numStr);
+    } else {
+      setStrAsValue(currentValueStr + numStr);
+    }
+};
