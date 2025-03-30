@@ -95,3 +95,18 @@ acEl.addEventListener('click', () => {
     valueStrInMemory = null;
     operatorInMemory = null;
 });
+
+pmEl.addEventListener('click', () => {
+    const currentValueNum = getValueAsNum();
+    const currentValueStr = getValueAsStr();
+  
+    if (currentValueStr === '-0') {
+      setStrAsValue('0');
+      return;
+    }
+    if (currentValueNum >= 0) {
+      setStrAsValue('-' + currentValueStr);
+    } else {
+      setStrAsValue(currentValueStr.substring(1));
+    }
+});
