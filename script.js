@@ -30,3 +30,6 @@ const numberElArray = [
 
 let valueStrInMemory = null;
 let operatorInMemory = null;
+
+const getValueAsStr = () => valueEl.textContent.split(',').join('');
+const getValueAsNum = () => parseFloat(getValueAsStr());
