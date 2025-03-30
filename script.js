@@ -33,3 +33,19 @@ let operatorInMemory = null;
 
 const getValueAsStr = () => valueEl.textContent.split(',').join('');
 const getValueAsNum = () => parseFloat(getValueAsStr());
+
+
+const setStrAsValue = (valueStr) => {
+    if (valueStr[valueStr.length - 1] === '.') {
+      valueEl.textContent += '.';
+      return;
+    }
+  
+    const [wholeNumStr, decimalStr] = valueStr.split('.');
+    if (decimalStr) {
+      valueEl.textContent =
+        parseFloat(wholeNumStr).toLocaleString() + '.' + decimalStr;
+    } else {
+      valueEl.textContent = parseFloat(wholeNumStr).toLocaleString();
+    }
+};
