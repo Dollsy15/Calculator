@@ -110,3 +110,11 @@ pmEl.addEventListener('click', () => {
       setStrAsValue(currentValueStr.substring(1));
     }
 });
+
+percentEl.addEventListener('click', () => {
+    const currentValueNum = getValueAsNum();
+    const newValueNum = currentValueNum / 100;
+    setStrAsValue(newValueNum.toString());
+    valueStrInMemory = null;
+    operatorInMemory = null;
+});
