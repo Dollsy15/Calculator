@@ -86,11 +86,3 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-
-.history {
-    font-size: 20px;
-    color: #bbb;
-    text-align: right;
-    min-height: 25px;
-    padding-right: 10px;
-}
