@@ -1,5 +1,10 @@
 const hourEl = document.querySelector('.hour');
 const minuteEl = document.querySelector('.minute');
+const valueEl = document.querySelector('.value');
+
+const acEl = document.querySelector('.ac');
+const pmEl = document.querySelector('.pm');
+const percentEl = document.querySelector('.percent');
 
 const updateTime = () => {
     const currentTime = new Date();
