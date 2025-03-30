@@ -86,11 +86,11 @@ const handleOperatorClick = (operation) => {
   if (!valueStrInMemory) {
     valueStrInMemory = getValueAsStr();
     operatorInMemory = operation;
-    setStrAsValue('0');
+    waitingForNewNumber = true;
   } else {
     valueStrInMemory = getResultOfOperationAsStr();
     operatorInMemory = operation;
-    setStrAsValue('0');
+    waitingForNewNumber = true;
   }
 };
 
