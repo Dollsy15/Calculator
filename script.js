@@ -84,8 +84,14 @@ const handleOperatorClick = (operation) => {
       setStrAsValue('0');
       return;
     }
-    
+
     valueStrInMemory = getResultOfOperationAsStr();
     operatorInMemory = operation;
     setStrAsValue('0');
 };
+
+acEl.addEventListener('click', () => {
+    setStrAsValue('0');
+    valueStrInMemory = null;
+    operatorInMemory = null;
+});
