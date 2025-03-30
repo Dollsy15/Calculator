@@ -27,3 +27,6 @@ const numberElArray = [
   number0El, number1El, number2El, number3El, number4El,
   number5El, number6El, number7El, number8El, number9El
 ];
+
+let valueStrInMemory = null;
+let operatorInMemory = null;
