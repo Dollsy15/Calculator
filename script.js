@@ -73,5 +73,19 @@ const getResultOfOperationAsStr = () => {
       newValueNum = valueNumInMemory / currentValueNum;
     }
     return newValueNum.toString();
-  };
+};
+
+const handleOperatorClick = (operation) => {
+    const currentValueStr = getValueAsStr();
   
+    if (!valueStrInMemory) {
+      valueStrInMemory = currentValueStr;
+      operatorInMemory = operation;
+      setStrAsValue('0');
+      return;
+    }
+    
+    valueStrInMemory = getResultOfOperationAsStr();
+    operatorInMemory = operation;
+    setStrAsValue('0');
+};
